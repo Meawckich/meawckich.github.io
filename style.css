@@ -69,15 +69,27 @@ body::before {
 
 .profile-card__description h1 + div{
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.profile-card__description__jobtitle {
+    width: 12ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    animation: flashing-border 0.75s step-end infinite,
+    changing-text 4s steps(12);
 }
 
 .profile-card__stats {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 80px;
 
     @media screen and (max-width: 576px){
-        gap: 30px;
+        gap: 50px;
     }
 }
 
@@ -92,7 +104,7 @@ body::before {
     font-weight: bold;
     letter-spacing: 3px;
     font-size: 2rem;
-    margin-bottom: 12px;
+    margin-bottom: 7px;
 }
 
 .profile-card__stats > div > *:last-child{
@@ -144,6 +156,24 @@ body::before {
         transform: scale(1);
     }
     to {
-        transform: scale(1.4);
+        transform: scale(2);
+    }
+}
+
+@keyframes flashing-border {
+    0% {
+        border-color:black;
+    }
+    50% {
+        border-color:transparent;
+    }
+    100% {
+        border-color:black;
+    }
+}
+
+@keyframes changing-text {
+    from{
+        width: 0;
     }
 }
