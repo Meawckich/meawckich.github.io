@@ -1,7 +1,5 @@
 
 const getStats = async () => {
-    var name;
-    var katas;
     var response = await fetch("https://www.codewars.com/api/v1/users/meawckich")
     if(response.ok)
     {
